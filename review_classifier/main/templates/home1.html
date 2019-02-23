@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" enctype="multipart/form-data" action="">
+		{% csrf_token %}
+		<li>
+			<label class="fs-field-label fs-anim-upper" for="q1">Review</label>
+			<input id="q1" name="review" type="text"  placeholder="Great movie" required/>
+		</li>
+	<button class="fs-submit" type="submit">Submit</button>
+	</form>
+</body>
+</html>

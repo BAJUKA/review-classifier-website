@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"> </script>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<title>Home</title>
+</head>
+<body>
+	review: <input type="text" id="x" />
+	<input type="button" id="submit" value="submit">
+
+	<script type="text/javascript">
+		const model = await tf.loadModel('http://127.0.0.1:8080/model.json');
+		document.getElementById('x').value = "";
+		document.getElementById("submit").onclick = function(){
+			var review = document.getElementById("x").value;
+			var res = review.split(" ");
+			var i;
+			var list =[];
+			for(i=0;i<res.length;i++)
+			{
+				list.push(dict[res[i]]);
+			}
+			var predict = model.predict(tf.tensor(list)).dataSync();
+			console.log(predict)
+		}
+
+
+	</script>
+	</body>
+</html>
