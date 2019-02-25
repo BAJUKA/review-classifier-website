@@ -14,13 +14,13 @@ def predict(review):
 	words = review.split()
 	rev=[]
 	K.backend.clear_session()
-	model = load_model('/home/bajuka/site/review_classifier/main/model/model.h5')
+	model = load_model('/model/model.h5')
 	for word in words:
 		if word not in d:
 			rev.append(2)
 		else:
 			rev.append(d[word]+3)
-	rev = K.preprocessing.sequence.pad_sequences([rev],truncating='pre', 
+	rev = K.preprocessing.sequence.pad_sequences([rev], truncating='pre',
 		padding='pre', maxlen=max_rew_len)
 	prediction = model.predict(rev)
 	print(prediction[0][0])
