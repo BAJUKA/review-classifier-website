@@ -2,6 +2,14 @@ import numpy as np
 import tensorflow as tf 
 import keras as K
 from keras.models import load_model
+import os
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+a = os.path.join(BASE_DIR, 'main')
+model_path = os.path.join(a, 'model.h5')
 
 import tensorflowjs as tfjs
 import os
@@ -14,7 +22,7 @@ def predict(review):
 	words = review.split()
 	rev=[]
 	K.backend.clear_session()
-	model = load_model('/model/model.h5')
+	model = load_model('/home/falcon-lover/Desktop/Web/review_classifier/main/model.h5')
 	for word in words:
 		if word not in d:
 			rev.append(2)
