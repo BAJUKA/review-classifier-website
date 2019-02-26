@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ytair94^%4wq&b#azletg1qci%yx%&7$6wni+g98#x%c_c_@ho'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://git.heroku.com/movies-review-classifier.git', 'http://127.0.0.1:8000/', 'http://localhost:8000/']
 
 
 # Application definition
@@ -127,6 +127,3 @@ STATICFILES_DIRS = (
                     os.path.join(BASE_DIR, 'static'),
 )
 
-
-import django_heroku
-django_heroku.settings(locals())
