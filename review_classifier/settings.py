@@ -26,7 +26,7 @@ SECRET_KEY = 'ytair94^%4wq&b#azletg1qci%yx%&7$6wni+g98#x%c_c_@ho'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://git.heroku.com/movies-review-classifier.git', 'http://127.0.0.1:8000/', 'http://localhost:8000/']
+ALLOWED_HOSTS = ['movies-review-classifier.herokuapp.com', 'http://127.0.0.1:8000/', 'http://localhost:8000/']
 
 
 # Application definition
