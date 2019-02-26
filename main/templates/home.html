@@ -7,20 +7,21 @@
     <meta name="author" content="colorlib.com">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <link href="../../static/css/main.css" rel="stylesheet" />
-      {% load static %}
+
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <title>Home</title>
   </head>
   <body>
     <div class="s01">
-   <form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" enctype="multipart/form-data">{% csrf_token %} 
+   <form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" enctype="multipart/form-data" action="">{% csrf_token %}
         <fieldset>
           <legend>Review Classifier</legend>
         </fieldset>
         <div class="inner-form">
         	
           <div class="input-field first-wrap">
-            <input id="search" type="text" placeholder="Enter your review" />
+            <input id="search" name="review" type="text" placeholder="Enter your review" />
           </div>
           <div class="input-field third-wrap">
             <button class="btn-search" type="button">Submit</button>

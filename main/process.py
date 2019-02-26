@@ -22,7 +22,7 @@ def predict(review):
 	words = review.split()
 	rev=[]
 	K.backend.clear_session()
-	model = load_model('/home/falcon-lover/Desktop/Web/review_classifier/main/model.h5')
+	model = load_model(model_path)
 	for word in words:
 		if word not in d:
 			rev.append(2)

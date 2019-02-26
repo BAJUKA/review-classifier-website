@@ -23,6 +23,7 @@ class HomeView(TemplateView):
 	def post(self, request):
 		print(model_path)
 		form = ReviewForm(request.POST)
+		print(form.is_valid())
 		if form.is_valid():
 			review = form.cleaned_data['review']
 			res = predict(review)
